@@ -46,9 +46,6 @@ createInstance() {
     const vm = new Vue(BasemapChangerWidget);
     vm.basemaps = basemaps;
 
-    vm.$on("change-basemap", (selectedId) => {
-        basemapsModel.selectedId = selectedId;
-    });
     Binding.for(vm, basemapsModel)
         .syncAll("selectedId")
         .syncToLeftNow()
