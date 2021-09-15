@@ -1,6 +1,6 @@
 # Übung 11
 
-1. Hinzufügen der MapWidgetModel-Referenz zur BasemapChangerWidgetFactory:
+1. Hinzufügen der MapWidgetModel-Referenz zur BasemapChangerWidgetFactory in der manifest.json:
 
 ```javascript
 {
@@ -27,7 +27,19 @@
 }
 ```
 
-2. Zoom-Property zur BasemapChangerWidget.vue hinzufügen:
+2. Hinzufügen der map-widget Dependency zur manifest.json:
+
+```javascript
+"dependencies": {
+    "esri": "^4.10.0",
+    "apprt-vue": "^4.7.0",
+    "apprt-vuetify": "^4.7.0",
+    "map-basemaps-api": "^4.7.0",
+    "map-widget": "^4.7.0"
+},
+```
+
+3. Zoom-Property zur BasemapChangerWidget.vue hinzufügen:
 
 ```javascript
 export default {
@@ -45,7 +57,7 @@ export default {
 };
 ```
 
-3. Anlegen eines neuen Bindings für das MapWidgetModel in der BasemapChangerWidgetFactory:
+4. Anlegen eines neuen Bindings für das MapWidgetModel in der BasemapChangerWidgetFactory:
 
 ```javascript
 const _mapWidgetModelBinding = Symbol("_mapWidgetModelBinding");
@@ -69,7 +81,7 @@ this.#mapWidgetModelBinding = Binding.for(vm, mapWidgetModel)
     .enable();
 ```
 
-4. Hinzufügen eines Sliders zum BasemapChangerWidget.vue:
+5. Hinzufügen eines Sliders zum BasemapChangerWidget.vue:
 
 ```javascript
 <template>
