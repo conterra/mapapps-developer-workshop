@@ -3,12 +3,15 @@
 1. Entfernen des @change-Events von der RadioButtonGroup in der BasemapChangerWidget.vue:
 
 ```javascript
-<v-radio-group v-model="selectedId">
+<v-radio-group
+    v-model="selectedId"
+>
     <v-radio
         v-for="basemap in basemaps"
         :key="basemap.id"
         :label="basemap.title"
         :value="basemap.id"
+        color="primary"
     ></v-radio>
 </v-radio-group>
 ```
@@ -40,14 +43,17 @@ createInstance() {
         }
     });
 
-    let vm = new Vue(BasemapChangerWidget);
+    const vm = new Vue(BasemapChangerWidget);
     vm.basemaps = basemaps;
 
+    vm.$on("change-basemap", (selectedId) => {
+        basemapsModel.selectedId = selectedId;
+    });
     Binding.for(vm, basemapsModel)
         .syncAll("selectedId")
         .syncToLeftNow()
         .enable();
 
-    return VueDijit(vm);
+    return VueDijit(vm, {class: "basemapchanger-widget"});
 }
 ```
