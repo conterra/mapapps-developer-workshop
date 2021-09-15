@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         changeBasemap: function () {
-            this.$emit("changeBasemap", this.selectedId);
+            this.$emit("change-basemap", this.selectedId);
         }
     }
 };
@@ -38,7 +38,7 @@ export default {
 3. In der BasemapChangerWidgetFactory.js an das changeBasemap-Event binden:
 
 ```javascript
-vm.$on("changeBasemap", (selectedId)=>{
+vm.$on("change-asemap", (selectedId)=>{
     basemapsModel.selectedId = selectedId;
 });
 ```
