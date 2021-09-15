@@ -3,11 +3,17 @@
     "version": "1.0.0",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
+    "vendor": "con terra GmbH",
+    "productName": "mapapps-developer-workshop",
     "dependencies": {
         "esri": "^4.10.0",
         "apprt-vue": "^4.7.0",
         "apprt-vuetify": "^4.7.0"
     },
+    "layer": "module",
+    "i18n": [
+        "bundle"
+    ],
     "layout-widgets": [
         {
             "widgetRole": "basemapChangerWidget",
