@@ -20,6 +20,7 @@ _initComponent() {
     });
 
     const vm = this.#vm = new Vue(BasemapChangerWidget);
+    vm.basemaps = basemaps;
 
     this.#binding = Binding.for(vm, basemapsModel)
         .syncAll("selectedId")
@@ -32,7 +33,7 @@ _initComponent() {
 
 ```javascript
 createInstance() {
-    return VueDijit(this.#vm);
+    return VueDijit(this.#vm, {class: "basemapchanger-widget"});
 }
 ```
 
