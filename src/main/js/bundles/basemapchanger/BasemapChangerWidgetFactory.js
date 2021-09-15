@@ -6,8 +6,8 @@ export default class BasemapChangerWidgetFactory {
 
     createInstance() {
 
-        const vm = new Vue(BasemapChangerWidget, {class: "basemapchanger-widget"});
-        return VueDijit(vm);
+        const vm = new Vue(BasemapChangerWidget);
+        return VueDijit(vm, {class: "basemapchanger-widget"});
 
     }
 
