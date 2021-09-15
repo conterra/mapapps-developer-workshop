@@ -192,9 +192,9 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 * Make sure bundle is loaded instead of theme-everlasting in sample app
 * When renaming/copying the 'theme-custom' bundle to e.g. `theme-[projectname]` make sure to also make the corresponding changes to the following files:
 
-  * `gulpfile.js`
-  * `theme-name/manifest.json`
-  * `theme-name/styles/styles.less`
+    * `gulpfile.js`
+    * `theme-name/manifest.json`
+    * `theme-name/styles/styles.less`
 
 ### Build Process
 
