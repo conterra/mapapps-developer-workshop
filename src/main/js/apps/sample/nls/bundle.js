@@ -1,13 +1,6 @@
 module.exports = {
     root: {
-        apptitle: "map.apps 4 Sample",
-        custominfo: {
-            imprint: {
-                title: "Imprint",
-                tooltip: "Show imprint",
-                content: "<p>This is a sample for an imprint.</p>"
-            }
-        },
+        apptitle: "map.apps 4 Developer Workshop",
         map: {
             koeln1: {
                 title: "Basic Data",
