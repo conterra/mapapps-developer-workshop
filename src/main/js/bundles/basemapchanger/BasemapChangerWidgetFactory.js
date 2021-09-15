@@ -21,7 +21,8 @@ export default class BasemapChangerWidgetFactory {
             basemapsModel.selectedId = selectedId;
         });
 
-        return VueDijit(vm);
+        return VueDijit(vm, {class: "basemapchanger-widget"});
+
     }
 
 }
