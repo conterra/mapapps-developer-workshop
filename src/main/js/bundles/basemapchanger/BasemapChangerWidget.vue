@@ -1,6 +1,9 @@
 <template>
     <v-container grid-list-md>
-        <v-layout row wrap>
+        <v-layout
+            row
+            wrap
+        >
             <v-radio-group v-model="selectedId">
                 <v-radio
                     v-for="basemap in basemaps"
@@ -14,11 +17,8 @@
     </v-container>
 </template>
 <script>
-    import Bindable from "apprt-vue/mixins/Bindable";
-
     export default {
         components: {},
-        mixins: [Bindable],
         data: function () {
             return {
                 selectedId: undefined,
