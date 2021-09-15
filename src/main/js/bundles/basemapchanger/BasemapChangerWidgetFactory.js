@@ -1,4 +1,3 @@
-import Binding from "apprt-binding/Binding";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import BasemapChangerWidget from "./BasemapChangerWidget.vue";
@@ -18,7 +17,7 @@ export default class BasemapChangerWidgetFactory {
         vm.basemaps = basemaps;
         vm.selectedId = basemapsModel.selectedId;
 
-        vm.$on("changeBasemap", (selectedId)=>{
+        vm.$on("change-basemap", (selectedId)=>{
             basemapsModel.selectedId = selectedId;
         });
 

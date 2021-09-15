@@ -1,9 +1,13 @@
 <template>
     <v-container grid-list-md>
-        <v-layout row wrap>
+        <v-layout
+            row
+            wrap
+        >
             <v-radio-group
                 v-model="selectedId"
-                @change="changeBasemap">
+                @change="changeBasemap"
+            >
                 <v-radio
                     v-for="basemap in basemaps"
                     :key="basemap.id"
@@ -16,11 +20,8 @@
     </v-container>
 </template>
 <script>
-    import Bindable from "apprt-vue/mixins/Bindable";
-
     export default {
         components: {},
-        mixins: [Bindable],
         data: function () {
             return {
                 selectedId: undefined,
@@ -29,7 +30,7 @@
         },
         methods: {
             changeBasemap: function () {
-                this.$emit("changeBasemap", this.selectedId);
+                this.$emit("change-basemap", this.selectedId);
             }
         }
     };
