@@ -22,7 +22,7 @@ export default class BasemapChangerWidgetFactory {
     }
 
     createInstance() {
-        return VueDijit(this.#vm);
+        return VueDijit(this.#vm, {class: "basemapchanger-widget"});
     }
 
     _initComponent() {
