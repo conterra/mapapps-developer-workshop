@@ -1,7 +1,12 @@
 <template>
     <v-container grid-list-md>
-        <v-layout row wrap>
-            <v-radio-group v-model="selectedId">
+        <v-layout
+            row
+            wrap
+        >
+            <v-radio-group
+                v-model="selectedId"
+            >
                 <v-radio
                     v-for="basemap in basemaps"
                     :key="basemap.id"
