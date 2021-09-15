@@ -17,7 +17,7 @@ export default class BasemapChangerWidgetFactory {
         vm.basemaps = basemaps;
         vm.selectedId = basemapsModel.selectedId;
 
-        vm.$on("change-basemap", (selectedId)=>{
+        vm.$on("change-basemap", (selectedId) => {
             basemapsModel.selectedId = selectedId;
         });
 
