@@ -57,11 +57,11 @@ export default {
 4. Hinzufügen eines Styles für die selected-Klasse in der styles.css:
 
 ```css
-.ctAppRoot .basemapChangerWidget .basemapEntry {
+.ctAppRoot .basemapchanger-widget .basemapEntry {
     cursor: pointer;
 }
 
-.ctAppRoot .basemapChangerWidget .basemapEntry.selected {
+.ctAppRoot .basemapchanger-widget .basemapEntry.selected {
     border: 2px solid blue;
 }
 ```
