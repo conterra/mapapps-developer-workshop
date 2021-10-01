@@ -1,6 +1,6 @@
-# mapapps-developer-workshop
+# map.apps Workshop Entwicklung
 
-This project is a starting point for the mapapps-developer-workshop. It is based on the [mapapps-4-developers](https://github.com/conterra/mapapps-4-developers) project.
+Dieses Projekt ist ein Ausgangspunkt für den map.apps Developer Workshop. Es basiert auf dem Projekt [mapapps-4-developers](https://github.com/conterra/mapapps-4-developers).
 
 ## Übungen
 
