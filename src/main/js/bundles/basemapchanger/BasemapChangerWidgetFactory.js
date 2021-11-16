@@ -19,8 +19,8 @@ export default class BasemapChangerWidgetFactory {
 
         Binding.for(vm, basemapsModel)
             .syncAll("selectedId")
-            .syncToLeftNow()
-            .enable();
+            .enable()
+            .syncToLeftNow();
 
         return VueDijit(vm, {class: "basemapchanger-widget"});
     }
