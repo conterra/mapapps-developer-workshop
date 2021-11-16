@@ -36,8 +36,8 @@ export default class BasemapChangerWidgetFactory {
 
         this.#binding = Binding.for(vm, basemapsModel)
             .syncAll("selectedId")
-            .syncToLeftNow()
-            .enable();
+            .enable()
+            .syncToLeftNow();
     }
 
 }
