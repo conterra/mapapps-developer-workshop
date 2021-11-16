@@ -77,8 +77,8 @@ deactivate() {
 const mapWidgetModel = this._mapWidgetModel;
 this.#mapWidgetModelBinding = Binding.for(vm, mapWidgetModel)
     .syncAll("zoom")
-    .syncToLeftNow()
-    .enable();
+    .enable()
+    .syncToLeftNow();
 ```
 
 5. Hinzufügen eines Sliders zum BasemapChangerWidget.vue:
