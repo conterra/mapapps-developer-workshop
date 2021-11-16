@@ -31,7 +31,13 @@ export default {
 };
 ```
 
-3. Entfernen des Bindings an das changeBasemap-Event. Verwendung der "apprt-binding/Binding"-Klasse zur erzeugen eines Bindings:
+3. Import der _apprt-binding/Binding_-Klasse zur erzeugen eines Bindings
+
+```javascript
+import Binding from "apprt-binding/Binding";
+```
+
+3. Entfernen des _change-basemap_-Events und Verwendung eines Bindings:
 
 ```javascript
 createInstance() {
@@ -48,8 +54,8 @@ createInstance() {
 
     Binding.for(vm, basemapsModel)
         .syncAll("selectedId")
-        .syncToLeftNow()
-        .enable();
+        .enable()
+        .syncToLeftNow();
 
     return VueDijit(vm, {class: "basemapchanger-widget"});
 }
