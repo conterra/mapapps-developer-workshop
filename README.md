@@ -34,7 +34,7 @@ export default {
 3. Import der _apprt-binding/Binding_-Klasse zur erzeugen eines Bindings
 
 ```javascript
-import Binding from "apprt-binding/Binding";
+import Bindable from "apprt-binding/Binding";
 ```
 
 3. Entfernen des _change-basemap_-Events und Verwendung eines Bindings:
