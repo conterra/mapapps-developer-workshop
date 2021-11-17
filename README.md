@@ -16,9 +16,11 @@
 </v-radio-group>
 ```
 
-2. Entfernen der changeBasemap-Methode in der BasemapChangerWidget.vue:
+2. Entfernen der changeBasemap-Methode in der BasemapChangerWidget.vue und hinzufügen des Bindable-Mixins:
 
 ```javascript
+import Bindable from "apprt-vue/mixins/Bindable";
+    
 export default {
     components: {},
     mixins: [Bindable],
@@ -31,13 +33,13 @@ export default {
 };
 ```
 
-3. Import der _apprt-binding/Binding_-Klasse zur erzeugen eines Bindings
+3. Import der _apprt-binding/Binding_-Klasse in der BasemapChangerWidgetFactory.js zur erzeugen eines Bindings
 
 ```javascript
-import Bindable from "apprt-binding/Binding";
+import Binding from "apprt-binding/Binding";
 ```
 
-3. Entfernen des _change-basemap_-Events und Verwendung eines Bindings:
+4. Entfernen des _change-basemap_-Events und Verwendung eines Bindings:
 
 ```javascript
 createInstance() {
