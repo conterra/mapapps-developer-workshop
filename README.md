@@ -31,7 +31,6 @@
 ```javascript
 export default {
     components: {},
-    mixins: [Bindable],
     data: function () {
         return {
             selectedId: undefined,
