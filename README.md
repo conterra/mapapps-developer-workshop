@@ -65,7 +65,6 @@ export default {
                 :id="basemap.id"
                 :key="basemap.id"
                 :title="basemap.title"
-                class="basemapEntry"
                 @change-basemap="selectedId = basemap.id"
             ></basemap>
         </v-layout>
