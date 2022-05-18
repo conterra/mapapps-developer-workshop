@@ -62,3 +62,14 @@ createInstance() {
     return VueDijit(vm, {class: "basemapchanger-widget"});
 }
 ```
+5. Hinzufügen der apprt-binding dependency zur manifest.json
+
+```json
+"dependencies": {
+    "esri": "^4.10.0",
+    "apprt-vue": "^4.7.0",
+    "apprt-vuetify": "^4.7.0",
+    "apprt-binding": "^4.7.0",
+    "map-basemaps-api": "^4.7.0"
+}
+```
