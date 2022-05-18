@@ -62,7 +62,7 @@ createInstance() {
     return VueDijit(vm, {class: "basemapchanger-widget"});
 }
 ```
-5. Hinzufügen der apprt-binding dependency zur manifest.json
+5. Hinzufügen der _apprt-binding_ dependency zur manifest.json
 
 ```json
 "dependencies": {
