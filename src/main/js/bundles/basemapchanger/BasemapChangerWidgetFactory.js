@@ -11,7 +11,7 @@ export default class BasemapChangerWidgetFactory {
             return {
                 id: basemap.id,
                 title: basemap.title
-            }
+            };
         });
 
         const vm = new Vue(BasemapChangerWidget);
