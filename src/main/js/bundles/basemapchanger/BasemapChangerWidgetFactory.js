@@ -28,7 +28,7 @@ export default class BasemapChangerWidgetFactory {
             return {
                 id: basemap.id,
                 title: basemap.title
-            }
+            };
         });
 
         const properties = this._properties;
