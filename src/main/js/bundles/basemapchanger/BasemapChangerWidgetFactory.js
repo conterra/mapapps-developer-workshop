@@ -29,7 +29,7 @@ export default class BasemapChangerWidgetFactory {
                 id: basemap.id,
                 title: basemap.title,
                 thumbnailUrl: basemap.thumbnailUrl
-            }
+            };
         });
 
         const properties = this._properties;
