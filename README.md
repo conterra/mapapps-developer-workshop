@@ -34,6 +34,7 @@
     "esri": "^4.14.0",
     "apprt-vue": "^4.14.0",
     "apprt-vuetify": "^4.14.0",
+    "apprt-binding": "^4.14.0",
     "map-basemaps-api": "^4.14.0",
     "map-widget": "^4.14.0"
 },
