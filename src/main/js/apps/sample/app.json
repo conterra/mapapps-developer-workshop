@@ -60,11 +60,6 @@
                 "basemaps": [
                     {
                         "id": "esri_street",
-                        "basemap": "streets",
-                        "title": "Straßen"
-                    },
-                    {
-                        "id": "esri_street2",
                         "basemap": "streets-vector",
                         "title": "Straßen Vector"
                     },
@@ -80,7 +75,7 @@
                     },
                     {
                         "id": "esri_topo",
-                        "basemap": "topo",
+                        "basemap": "topo-vector",
                         "title": "Topo",
                         "selected": true
                     }
