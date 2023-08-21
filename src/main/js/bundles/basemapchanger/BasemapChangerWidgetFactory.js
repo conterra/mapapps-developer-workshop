@@ -31,11 +31,12 @@ export default class BasemapChangerWidgetFactory {
         const vm = new Vue(BasemapChangerWidget);
         vm.basemaps = basemaps;
         vm.selectedId = basemapsModel.selectedId;
-        vm.$on("change-basemap", (selectedId)=>{
+
+        vm.$on("change-basemap", (selectedId) => {
             basemapsModel.selectedId = selectedId;
         });
-        return VueDijit(vm, {class: "basemapchanger-widget"});
 
+        return VueDijit(vm, {class: "basemapchanger-widget"});
     }
 
 }
