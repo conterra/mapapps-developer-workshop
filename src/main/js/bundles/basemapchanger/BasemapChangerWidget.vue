@@ -21,7 +21,15 @@
             row
             wrap
         >
-            Basemap Changer
+            <v-radio-group v-model="selectedId">
+                <v-radio
+                    v-for="basemap in basemaps"
+                    :key="basemap.id"
+                    :label="basemap.title"
+                    :value="basemap.id"
+                    color="primary"
+                />
+            </v-radio-group>
         </v-layout>
     </v-container>
 </template>
