@@ -1,6 +1,6 @@
 <!--
 
-    Copyright (C) 2023 con terra GmbH (info@conterra.de)
+    Copyright (C) 2022 con terra GmbH (info@conterra.de)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@
         >
             <v-radio-group
                 v-model="selectedId"
-                @change="changeBasemap"
             >
                 <v-radio
                     v-for="basemap in basemaps"
@@ -37,35 +36,16 @@
     </v-container>
 </template>
 <script>
-import BasemapChangerWidgetFactory from './BasemapChangerWidgetFactory';
+    import Bindable from "apprt-vue/mixins/Bindable";
 
     export default {
         components: {},
+        mixins: [Bindable],
         data: function () {
             return {
                 selectedId: undefined,
                 basemaps: []
             };
-        },
-        createInstance() {
-            const basemapsModel = this._basemapsModel;
-            const basemaps = basemapsModel.basemaps.map((basemap) => {
-                return {
-                    id: basemap.id,
-                    title: basemap.title
-                };
-            });
-            const vm = new Vue(BasemapChangerWidget);
-            vm.basemaps = basemaps;
-
-            Binding.for(vm, basemapsModel)
-                .syncAll("selectedId")
-                .enable()
-                .syncToLeftNow();
-
-            return VueDijit(vm, {class: "basemapchanger-widget"});
-            
-
         }
     };
 </script>
