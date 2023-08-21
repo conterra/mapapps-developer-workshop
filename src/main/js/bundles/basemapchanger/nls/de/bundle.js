@@ -22,5 +22,8 @@ module.exports = {
     tool: {
         title: "Basemap Changer",
         tooltip: "Basemap Changer"
+    },
+    toolsets: {
+        whatDoYouWant: "Was m\u00f6chten Sie tun?"
     }
 };

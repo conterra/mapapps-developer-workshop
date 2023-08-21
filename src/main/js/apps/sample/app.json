@@ -515,6 +515,26 @@
                         },
                         "container": "ignore",
                         "windowType": "drawer_left"
+                    },
+                    {
+                        "id": "dropdown",
+                        "title": "${toolsets.whatDoYouWant}",
+                        "cssClass": "ctWDYWBtn ctPrimaryInput",
+                        "tools": [
+                            "tocToggleTool",
+                            "printingToggleTool",
+                            "sharelinkTool",
+                            "basemapChangerToggleTool"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "drawer_button"
+                        },
+                        "container": "map",
+                        "position": {
+                            "rel_t": 80,
+                            "rel_l": 20
+                        },
+                        "windowType": "dropdown"
                     }
                 ]
             }
