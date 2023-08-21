@@ -29,7 +29,10 @@
     export default {
         components: {},
         data: function () {
-            return {};
+            return {
+                selectedId: undefined,
+                basemaps: []
+            };
         }
     };
 </script>
