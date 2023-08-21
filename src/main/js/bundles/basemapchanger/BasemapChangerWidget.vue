@@ -46,8 +46,8 @@
             };
         },
         methods: {
-            changeBasemap: function(){
-                this.$emit("change-basemap", this.selectID);
+            changeBasemap: function () {
+                this.$emit("change-basemap", this.selectedId);
             }
         }
     };
