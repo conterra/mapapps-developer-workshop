@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import Binding from "apprt-binding/Binding";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import BasemapChangerWidget from "./BasemapChangerWidget.vue";
@@ -30,11 +31,11 @@ export default class BasemapChangerWidgetFactory {
 
         const vm = new Vue(BasemapChangerWidget);
         vm.basemaps = basemaps;
-        vm.selectedId = basemapsModel.selectedId;
 
-        vm.$on("change-basemap", (selectedId) => {
-            basemapsModel.selectedId = selectedId;
-        });
+        Binding.for(vm, basemapsModel)
+            .syncAll("selectedId")
+            .enable()
+            .syncToLeftNow();
 
         return VueDijit(vm, {class: "basemapchanger-widget"});
     }
