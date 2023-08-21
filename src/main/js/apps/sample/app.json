@@ -35,7 +35,8 @@
             "omnisearch",
             "locator-store",
             "toc",
-            "console"
+            "console",
+            "basemapchanger"
         ],
         "require": [
             "${app}.app"
@@ -416,6 +417,25 @@
                     {
                         "name": "seasons",
                         "widgets": [
+                            {
+                                "widgetRole": "basemapChangerWidget",
+                                "window": {
+                                    "marginBox": {
+                                        "t": 40,
+                                        "b": 40,
+                                        "r": 0,
+                                        "w": 500                                    
+                                    }
+                                },
+                                "fixEdgesInViewPort":{
+                                    "]": false
+                                },
+                                "closable": false,
+                                "caollabsable": true,
+                                "collapseAxis": {
+                                    "]": true
+                                }
+                            },
                             {
                                 "widgetRole": "drawer_button",
                                 "attachTo": "map_topleft",
