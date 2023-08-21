@@ -37,6 +37,8 @@
     </v-container>
 </template>
 <script>
+import BasemapChangerWidgetFactory from './BasemapChangerWidgetFactory';
+
     export default {
         components: {},
         data: function () {
@@ -45,10 +47,25 @@
                 basemaps: []
             };
         },
-        methods: {
-            changeBasemap: function () {
-                this.$emit("change-basemap", this.selectedId);
-            }
+        createInstance() {
+            const basemapsModel = this._basemapsModel;
+            const basemaps = basemapsModel.basemaps.map((basemap) => {
+                return {
+                    id: basemap.id,
+                    title: basemap.title
+                };
+            });
+            const vm = new Vue(BasemapChangerWidget);
+            vm.basemaps = basemaps;
+
+            Binding.for(vm, basemapsModel)
+                .syncAll("selectedId")
+                .enable()
+                .syncToLeftNow();
+
+            return VueDijit(vm, {class: "basemapchanger-widget"});
+            
+
         }
     };
 </script>
