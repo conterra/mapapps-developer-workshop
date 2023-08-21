@@ -23,9 +23,9 @@
             "window": {
                 "title": "${ui.windowTitle}",
                 "autofocus": false,
-                "docktool": "basemapChangerToggleTool",
+                "dockTool": "basemapChangerToggleTool",
                 "minimizeOnClose": true,
-                "marginbox": {
+                "marginBox": {
                     "w": 400,
                     "h": 500,
                     "b": 100,
