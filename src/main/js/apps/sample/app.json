@@ -35,8 +35,7 @@
             "omnisearch",
             "locator-store",
             "toc",
-            "console",
-            "basemapchanger"
+            "console"
         ],
         "require": [
             "${app}.app"

@@ -15,22 +15,7 @@
         "bundle"
     ],
     "layout-widgets": [
-        {
-            "widgetRole": "basemapChangerWidget",
-            "template": "seasons",
-            "window": {
-                "title": "${ui.windowTitle}",
-                "autofocus": false,
-                "dockTool": "basemapChangerToggleTool",
-                "minimizeOnClose": true,
-                "marginBox": {
-                    "w": 355,
-                    "h": 455,
-                    "b": 100,
-                    "l": 50
-                }
-            }
-        }
+    
     ],
     "cssThemesExtension": [
         {
