@@ -16,6 +16,9 @@
 module.exports = {
     root: {
         apptitle: "map.apps 4 Developer Workshop",
+        toolsets: {
+            whatDoYouWant: "What do you want to do?"
+        },
         map: {
             koeln1: {
                 title: "Basic Data",
