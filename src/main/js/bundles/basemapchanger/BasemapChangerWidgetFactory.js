@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 con terra GmbH (info@conterra.de)
+ * Copyright (C) 2022 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,21 @@ export default class BasemapChangerWidgetFactory {
     #vm = undefined;
     #binding = undefined;
 
+    activate() {
+        this._initComponent();
+    }
+
+    deactivate() {
+        this.#binding.unbind();
+        this.#binding = undefined;
+        this.#vm = undefined;
+    }
+
     createInstance() {
+        return VueDijit(this.#vm, {class: "basemapchanger-widget"});
+    }
+
+    _initComponent() {
         const basemapsModel = this._basemapsModel;
         const basemaps = basemapsModel.basemaps.map((basemap) => {
             return {
@@ -32,15 +46,13 @@ export default class BasemapChangerWidgetFactory {
             };
         });
 
-        const vm = new Vue(BasemapChangerWidget);
+        const vm = this.#vm = new Vue(BasemapChangerWidget);
         vm.basemaps = basemaps;
 
-        Binding.for(vm, basemapsModel)
+        this.#binding = Binding.for(vm, basemapsModel)
             .syncAll("selectedId")
             .enable()
             .syncToLeftNow();
-
-        return VueDijit(vm, {class: "basemapchanger-widget"});
     }
 
 }
