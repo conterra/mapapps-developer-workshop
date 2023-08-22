@@ -20,6 +20,9 @@ import BasemapChangerWidget from "./BasemapChangerWidget.vue";
 
 export default class BasemapChangerWidgetFactory {
 
+    #vm = undefined;
+    #binding = undefined;
+
     createInstance() {
         const basemapsModel = this._basemapsModel;
         const basemaps = basemapsModel.basemaps.map((basemap) => {
