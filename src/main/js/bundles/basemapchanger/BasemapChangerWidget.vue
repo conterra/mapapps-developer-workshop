@@ -46,6 +46,12 @@
             <v-flex md12>
                 {{ title }}
             </v-flex>
+            <v-slider
+                v-model="zoom"
+                max="15"
+                min="1"
+                label="Zoom"
+                thumb-label/>
         </v-layout>
     </v-container>
 </template>

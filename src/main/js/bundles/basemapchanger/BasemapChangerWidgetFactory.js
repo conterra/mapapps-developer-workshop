@@ -22,6 +22,7 @@ export default class BasemapChangerWidgetFactory {
 
     #vm = undefined;
     #binding = undefined;
+    const #mapWidgetModelBinding = undefined;
 
     activate() {
         this._initComponent();
@@ -30,6 +31,8 @@ export default class BasemapChangerWidgetFactory {
     deactivate() {
         this.#binding.unbind();
         this.#binding = undefined;
+        this.#mapWidgetModelBinding.unbind();
+        this.#mapWidgetModelBinding = undefined;
         this.#vm = undefined;
     }
 
@@ -38,6 +41,12 @@ export default class BasemapChangerWidgetFactory {
     }
 
     _initComponent() {
+        const mapWidgetModel = this._mapWidgetModel;
+        this.#mapWidgetModelBinding = Binding.for(vm, mapWidgetModel)
+        .syncAll("zoom")
+        .enable()
+        .syncToLeftNow();
+        
         const basemapsModel = this._basemapsModel;
         const basemaps = basemapsModel.basemaps.map((basemap) => {
             return {
