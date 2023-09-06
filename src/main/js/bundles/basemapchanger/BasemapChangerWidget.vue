@@ -32,33 +32,19 @@
     </v-container>
 </template>
 <script>
-    export default {
-        props: {
-            id: {
-                type: String,
-                default: ""
-            },
-            title: {
-                type: String,
-                default: ""
-            }
-        }
-    };
-</script>
-<script>
     import Bindable from "apprt-vue/mixins/Bindable";
     import Basemap from "./Basemap.vue";
 
     export default {
-    components: {
-        basemap: Basemap
-    },
-    mixins: [Bindable],
-    data: function () {
-        return {
-            selectedId: undefined,
-            basemaps: []
-        };
-    }
-};
+        components: {
+            basemap: Basemap
+        },
+        mixins: [Bindable],
+        data: function () {
+            return {
+                selectedId: undefined,
+                basemaps: []
+            };
+        }
+    };
 </script>
