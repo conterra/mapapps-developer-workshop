@@ -17,19 +17,29 @@
 -->
 <template>
     <v-container
+        pa-0
+        text-xs-center
         grid-list-md
         :class="{selected: isSelected}"
         @click="$emit('change-basemap')">
         <v-layout
             row
             wrap
+            allign-center
         >
+            <v-flex md6>
+                <v-img :src="thumbnailUrl"></v-img>
+            </v-flex>
+            <v-flex md6>
+                {{ title }}
+            </v-flex>
             <basemap
                 v-for="basemap in basemaps"
                 :id="basemap.id"
                 :key="basemap.id"
                 :title="basemap.title"
                 :is-selected="basemap.id === selectedId"
+                :thumbnail-url="basemap.thumbnailUrl"
                 class="basemapEntry"
                 @change-basemap="selectedId = basemap.id"
             />
@@ -60,6 +70,10 @@
             isSelected: {
                 type: Boolean,
                 default: false
+            },
+            thumbnailUrl: {
+                type: String,
+                default: ""
             }
         },
         data: function () {
