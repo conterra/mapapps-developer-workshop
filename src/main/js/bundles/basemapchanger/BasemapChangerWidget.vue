@@ -16,42 +16,32 @@
 
 -->
 <template>
-    <v-container
-        pa-0
-        text-xs-center
-        grid-list-md
-        :class="{selected: isSelected}"
-        @click="$emit('change-basemap')">
+    <v-container grid-list-md>
         <v-layout
             row
             wrap
-            allign-center
         >
-            <v-flex md6>
-                <v-img :src="thumbnailUrl"></v-img>
-            </v-flex>
-            <v-flex md6>
-                {{ title }}
-            </v-flex>
-            <basemap
-                v-for="basemap in basemaps"
-                :id="basemap.id"
-                :key="basemap.id"
-                :title="basemap.title"
-                :is-selected="basemap.id === selectedId"
-                :thumbnail-url="basemap.thumbnailUrl"
-                class="basemapEntry"
-                @change-basemap="selectedId = basemap.id"
-            />
             <v-flex md12>
-                {{ title }}
+                <basemap
+                    v-for="basemap in basemaps"
+                    :id="basemap.id"
+                    :key="basemap.id"
+                    :title="basemap.title"
+                    :is-selected="basemap.id === selectedId"
+                    :thumbnail-url="basemap.thumbnailUrl"
+                    class="basemapEntry"
+                    @change-basemap="selectedId = basemap.id"
+                />
             </v-flex>
-            <v-slider
-                v-model="zoom"
-                max="15"
-                min="1"
-                label="Zoom"
-                thumb-label/>
+            <v-flex md12>
+                <v-slider
+                    v-model="zoom"
+                    max="15"
+                    min="1"
+                    label="Zoom"
+                    thumb-label
+                />
+            </v-flex>
         </v-layout>
     </v-container>
 </template>
@@ -64,30 +54,12 @@
             basemap: Basemap
         },
         mixins: [Bindable],
-        props: {
-            id: {
-                type: String,
-                default: ""
-            },
-            title: {
-                type: String,
-                default: ""
-            },
-            isSelected: {
-                type: Boolean,
-                default: false
-            },
-            thumbnailUrl: {
-                type: String,
-                default: ""
-            }
-        },
         data: function () {
             return {
                 selectedId: undefined,
-                basemaps: []
+                basemaps: [],
+                zoom: undefined
             };
         }
     };
 </script>
-
