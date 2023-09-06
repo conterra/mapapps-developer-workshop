@@ -16,7 +16,10 @@
 
 -->
 <template>
-    <v-container grid-list-md>
+    <v-container
+        grid-list-md
+        :class="{selected: isSelected}"
+        @click="$emit('change-basemap')">
         <v-layout
             row
             wrap
@@ -26,8 +29,13 @@
                 :id="basemap.id"
                 :key="basemap.id"
                 :title="basemap.title"
+                :is-selected="basemap.id === selectedId"
+                class="basemapEntry"
                 @change-basemap="selectedId = basemap.id"
             />
+            <v-flex md12>
+                {{ title }}
+            </v-flex>
         </v-layout>
     </v-container>
 </template>
@@ -40,6 +48,20 @@
             basemap: Basemap
         },
         mixins: [Bindable],
+        props: {
+            id: {
+                type: String,
+                default: ""
+            },
+            title: {
+                type: String,
+                default: ""
+            },
+            isSelected: {
+                type: Boolean,
+                default: false
+            }
+        },
         data: function () {
             return {
                 selectedId: undefined,
@@ -48,3 +70,4 @@
         }
     };
 </script>
+

@@ -13,3 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ .ctAppRoot .basemapchanger-widget .basemapEntry {
+    cursor: pointer;
+}
+
+.ctAppRoot .basemapchanger-widget .basemapEntry.selected {
+    border: 2px solid blue;
+}
