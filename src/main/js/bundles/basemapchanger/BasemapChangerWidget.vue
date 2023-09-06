@@ -21,31 +21,44 @@
             row
             wrap
         >
-            <v-radio-group
-                v-model="selectedId"
-            >
-                <v-radio
-                    v-for="basemap in basemaps"
-                    :key="basemap.id"
-                    :label="basemap.title"
-                    :value="basemap.id"
-                    color="primary"
-                />
-            </v-radio-group>
+            <basemap
+                v-for="basemap in basemaps"
+                :id="basemap.id"
+                :key="basemap.id"
+                :title="basemap.title"
+                @change-basemap="selectedId = basemap.id"
+            />
         </v-layout>
     </v-container>
 </template>
 <script>
-    import Bindable from "apprt-vue/mixins/Bindable";
-
     export default {
-        components: {},
-        mixins: [Bindable],
-        data: function () {
-            return {
-                selectedId: undefined,
-                basemaps: []
-            };
+        props: {
+            id: {
+                type: String,
+                default: ""
+            },
+            title: {
+                type: String,
+                default: ""
+            }
         }
     };
+</script>
+<script>
+    import Bindable from "apprt-vue/mixins/Bindable";
+    import Basemap from "./Basemap.vue";
+
+    export default {
+    components: {
+        basemap: Basemap
+    },
+    mixins: [Bindable],
+    data: function () {
+        return {
+            selectedId: undefined,
+            basemaps: []
+        };
+    }
+};
 </script>
