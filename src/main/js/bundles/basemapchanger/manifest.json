@@ -52,7 +52,8 @@
             ],
             "instanceFactory": true,
             "properties": {
-                "widgetRole": "basemapChangerWidget"
+                "widgetRole": "basemapChangerWidget",
+                "selectedBasemapId": "esri_street"
             },
             "references": [
                 {
