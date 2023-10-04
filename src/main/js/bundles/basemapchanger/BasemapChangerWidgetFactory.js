@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 con terra GmbH (info@conterra.de)
+ * Copyright (C) 2022 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ export default class BasemapChangerWidgetFactory {
 
     #vm = undefined;
     #binding = undefined;
-    const #mapWidgetModelBinding = undefined;
+    #mapWidgetModelBinding = undefined;
 
     activate() {
         this._initComponent();
@@ -41,12 +41,6 @@ export default class BasemapChangerWidgetFactory {
     }
 
     _initComponent() {
-        const mapWidgetModel = this._mapWidgetModel;
-        this.#mapWidgetModelBinding = Binding.for(vm, mapWidgetModel)
-        .syncAll("zoom")
-        .enable()
-        .syncToLeftNow();
-        
         const basemapsModel = this._basemapsModel;
         const basemaps = basemapsModel.basemaps.map((basemap) => {
             return {
@@ -64,6 +58,12 @@ export default class BasemapChangerWidgetFactory {
 
         this.#binding = Binding.for(vm, basemapsModel)
             .syncAll("selectedId")
+            .enable()
+            .syncToLeftNow();
+
+        const mapWidgetModel = this._mapWidgetModel;
+        this.#mapWidgetModelBinding = Binding.for(vm, mapWidgetModel)
+            .syncAll("zoom")
             .enable()
             .syncToLeftNow();
     }
