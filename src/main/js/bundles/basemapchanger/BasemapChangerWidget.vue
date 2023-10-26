@@ -37,6 +37,7 @@
 </template>
 <script>
     import Bindable from "apprt-vue/mixins/Bindable";
+    import Basemap from "./Basemap.vue";
 
     export default {
         components: {},
