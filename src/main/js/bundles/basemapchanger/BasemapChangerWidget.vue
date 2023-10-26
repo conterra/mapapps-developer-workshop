@@ -48,20 +48,6 @@
             basemap: Basemap
         },
         mixins: [Bindable],
-        props: {
-            id: {
-                type: String,
-                default: ""
-            },
-            title: {
-                type: String,
-                default: ""
-            },
-            isSelected: {
-                type: Boolean,
-                default: false
-            }
-        },
         data: function () {
             return {
                 selectedId: undefined,
