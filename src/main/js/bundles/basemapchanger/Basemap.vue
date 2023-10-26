@@ -25,44 +25,35 @@
         <v-layout
             row
             wrap
-            allign-center
-        >
+            align-center>
             <v-flex md6>
                 <v-img :src="thumbnailUrl"></v-img>
             </v-flex>
             <v-flex md6>
                 {{ title }}
             </v-flex>
-            <basemap
-                v-for="basemap in basemaps"
-                :id="basemap.id"
-                :key="basemap.id"
-                :title="basemap.title"
-                :is-selected="basemap.id === selectedId"
-                :thumbnail-url="basemap.thumbnailUrl"
-                class="basemapEntry"
-                @change-basemap="selectedId = basemap.id"
-            />
-            <v-flex md12>
-                {{ title }}
-            </v-flex>
         </v-layout>
     </v-container>
 </template>
 <script>
-    import Bindable from "apprt-vue/mixins/Bindable";
-    import Basemap from "./Basemap.vue";
-
     export default {
-        components: {
-            basemap: Basemap
-        },
-        mixins: [Bindable],
-        data: function () {
-            return {
-                selectedId: undefined,
-                basemaps: []
-            };
+        props: {
+            id: {
+                type: String,
+                default: ""
+            },
+            title: {
+                type: String,
+                default: ""
+            },
+            isSelected: {
+                type: Boolean,
+                default: false
+            },
+            thumbnailUrl: {
+                type: String,
+                default: ""
+            }
         }
     };
 </script>
